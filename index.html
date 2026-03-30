@@ -13,6 +13,7 @@ body {
   color:white;
 }
 
+/* HERO */
 .hero {
   position:relative;
   height:100vh;
@@ -20,7 +21,7 @@ body {
   align-items:center;
   justify-content:center;
   text-align:center;
-  background:url('https://images.unsplash.com/photo-1599058917212-d750089bc07e') center/cover;
+  background:url('https://images.unsplash.com/photo-1558611848-73f7eb4001ab') center/cover;
 }
 
 .hero::before {
@@ -36,13 +37,20 @@ body {
   z-index:2;
 }
 
+/* LOGO CORRIGIDA */
 .logo {
-  width:110px;
-  margin-bottom:20px;
+  width:130px;
+  margin-bottom:25px;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  filter: drop-shadow(0 0 12px rgba(255,212,0,0.6));
 }
 
+/* TEXTOS */
 h1 {
   font-size:36px;
+  letter-spacing:1px;
 }
 
 .highlight {
@@ -55,6 +63,7 @@ h1 {
   font-weight:bold;
 }
 
+/* BOTÃO */
 .cta {
   background:#FFD400;
   color:black;
@@ -72,9 +81,14 @@ h1 {
   transform:scale(1.05);
 }
 
+/* SEÇÕES */
 .section {
   padding:60px 20px;
   text-align:center;
+}
+
+.section h2 {
+  color:#FFD400;
 }
 
 .benefits {
@@ -97,6 +111,7 @@ h1 {
   transform:translateY(-8px);
 }
 
+/* URGÊNCIA */
 .urgency {
   background:#FFD400;
   color:black;
@@ -105,16 +120,7 @@ h1 {
   font-weight:bold;
 }
 
-.testimonials {
-  max-width:800px;
-  margin:auto;
-}
-
-.testimonial {
-  margin:20px 0;
-  font-style:italic;
-}
-
+/* WHATSAPP FIXO */
 .fixed-btn {
   position:fixed;
   bottom:20px;
@@ -139,7 +145,9 @@ h1 {
 
 <section class="hero">
   <div class="hero-content">
-    <img src="logo.png" class="logo">
+
+    <!-- IMPORTANTE: nome correto da imagem -->
+    <img src="logo.png" class="logo" alt="Mafra Academia">
 
     <h1>
       Chega de promessas.<br>
@@ -155,6 +163,7 @@ h1 {
     <button class="cta" onclick="redirect()">
       Quero começar agora
     </button>
+
   </div>
 </section>
 
@@ -166,15 +175,6 @@ h1 {
     <div class="card">💪 Treinos para todos níveis</div>
     <div class="card">🔥 Resultados reais</div>
     <div class="card">📍 Localização acessível</div>
-  </div>
-</section>
-
-<section class="section">
-  <h2>Resultados reais de alunos</h2>
-
-  <div class="testimonials">
-    <div class="testimonial">"Nunca consegui manter constância até começar aqui!"</div>
-    <div class="testimonial">"Ambiente top e resultado rápido!"</div>
   </div>
 </section>
 
