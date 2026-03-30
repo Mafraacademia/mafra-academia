@@ -8,22 +8,32 @@
 <style>
 body {
   margin:0;
-  font-family: Arial;
+  font-family: Arial, sans-serif;
   background:#0B0B0B;
   color:white;
 }
 
-.urgency {
-  background:#FFD400;
-  color:black;
+.hero {
+  position:relative;
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   text-align:center;
-  padding:10px;
-  font-weight:bold;
+  background:url('https://images.unsplash.com/photo-1599058917212-d750089bc07e') center/cover;
 }
 
-.hero {
-  text-align:center;
-  padding:70px 20px;
+.hero::before {
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.7);
+}
+
+.hero-content {
+  position:relative;
+  z-index:2;
 }
 
 .logo {
@@ -32,7 +42,7 @@ body {
 }
 
 h1 {
-  font-size:34px;
+  font-size:36px;
 }
 
 .highlight {
@@ -40,8 +50,8 @@ h1 {
 }
 
 .price {
-  font-size:26px;
-  margin:15px 0;
+  font-size:28px;
+  margin:20px 0;
   font-weight:bold;
 }
 
@@ -54,101 +64,129 @@ h1 {
   border:none;
   border-radius:8px;
   cursor:pointer;
+  box-shadow:0 0 20px #FFD400;
+  transition:0.3s;
+}
+
+.cta:hover {
+  transform:scale(1.05);
 }
 
 .section {
-  padding:40px 20px;
-  background:#1a1a1a;
+  padding:60px 20px;
+  text-align:center;
+}
+
+.benefits {
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+  gap:20px;
+  max-width:1000px;
+  margin:auto;
 }
 
 .card {
-  background:#111;
-  padding:20px;
-  border-radius:10px;
-  margin:10px;
+  background:#1a1a1a;
+  padding:25px;
+  border-radius:12px;
+  border:1px solid #FFD400;
+  transition:0.3s;
+}
+
+.card:hover {
+  transform:translateY(-8px);
+}
+
+.urgency {
+  background:#FFD400;
+  color:black;
+  text-align:center;
+  padding:12px;
+  font-weight:bold;
+}
+
+.testimonials {
+  max-width:800px;
+  margin:auto;
 }
 
 .testimonial {
+  margin:20px 0;
   font-style:italic;
-  margin:10px 0;
 }
 
-.fixed-cta {
+.fixed-btn {
   position:fixed;
-  bottom:0;
-  width:100%;
+  bottom:20px;
+  right:20px;
   background:#FFD400;
-  text-align:center;
-  padding:15px;
+  color:black;
+  padding:15px 20px;
+  border-radius:50px;
   font-weight:bold;
   cursor:pointer;
+  box-shadow:0 0 15px #FFD400;
 }
+
 </style>
 </head>
 
 <body>
 
 <div class="urgency">
-⚠️ PROMOÇÃO ENCERRA HOJE
+🔥 PROMOÇÃO POR TEMPO LIMITADO
 </div>
 
-<div class="hero">
-  <img src="logo.png" class="logo">
+<section class="hero">
+  <div class="hero-content">
+    <img src="logo.png" class="logo">
 
-  <h1>
-    Cansado de não ver resultado?<br>
-    <span class="highlight">Comece hoje na Mafra Academia</span>
-  </h1>
+    <h1>
+      Chega de promessas.<br>
+      <span class="highlight">Comece a ver resultado de verdade</span>
+    </h1>
 
-  <p>Treinos completos + ambiente motivador</p>
+    <p>Treinos completos + estrutura profissional</p>
 
-  <div class="price">
-    A partir de R$ 89,90/mês
+    <div class="price">
+      Planos a partir de R$ 89,90
+    </div>
+
+    <button class="cta" onclick="redirect()">
+      Quero começar agora
+    </button>
   </div>
+</section>
 
-  <button class="cta" id="cta">Quero mudar meu corpo</button>
-</div>
+<section class="section">
+  <h2>Por que escolher a Mafra?</h2>
 
-<div class="section">
-  <h2>O que você vai encontrar</h2>
+  <div class="benefits">
+    <div class="card">🏋️ Equipamentos modernos</div>
+    <div class="card">💪 Treinos para todos níveis</div>
+    <div class="card">🔥 Resultados reais</div>
+    <div class="card">📍 Localização acessível</div>
+  </div>
+</section>
 
-  <div class="card">🏋️ Equipamentos modernos</div>
-  <div class="card">💪 Treinos para todos níveis</div>
-  <div class="card">🔥 Resultados reais</div>
-  <div class="card">📍 Fácil acesso</div>
-</div>
+<section class="section">
+  <h2>Resultados reais de alunos</h2>
 
-<div class="section">
-  <h2>Resultados reais</h2>
+  <div class="testimonials">
+    <div class="testimonial">"Nunca consegui manter constância até começar aqui!"</div>
+    <div class="testimonial">"Ambiente top e resultado rápido!"</div>
+  </div>
+</section>
 
-  <div class="testimonial">"Em 2 meses já vi diferença no meu corpo!"</div>
-  <div class="testimonial">"Melhor academia que já treinei"</div>
-</div>
-
-<div class="fixed-cta" id="fixedCta">
-👉 FALAR NO WHATSAPP AGORA
+<div class="fixed-btn" onclick="redirect()">
+💬 WhatsApp
 </div>
 
 <script>
-
-// CTA inteligente
-const cta = document.getElementById("cta");
-const fixed = document.getElementById("fixedCta");
-
-function redirect() {
+function redirect(){
   window.location.href =
-  "https://wa.me/5548996389625?text=Quero%20me%20matricular%20na%20Mafra";
+  "https://wa.me/5548996389625?text=Quero%20começar%20na%20Mafra%20Academia";
 }
-
-cta.onclick = redirect;
-fixed.onclick = redirect;
-
-// urgência fake dinâmica
-setInterval(() => {
-  document.querySelector(".urgency").innerText =
-  "⚠️ RESTAM POUCAS VAGAS HOJE";
-}, 8000);
-
 </script>
 
 </body>
