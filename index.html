@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mafra Academia</title>
+
+<style>
+body {
+  margin:0;
+  font-family: Arial;
+  background:#0B0B0B;
+  color:white;
+}
+
+.urgency {
+  background:#FFD400;
+  color:black;
+  text-align:center;
+  padding:10px;
+  font-weight:bold;
+}
+
+.hero {
+  text-align:center;
+  padding:70px 20px;
+}
+
+.logo {
+  width:110px;
+  margin-bottom:20px;
+}
+
+h1 {
+  font-size:34px;
+}
+
+.highlight {
+  color:#FFD400;
+}
+
+.price {
+  font-size:26px;
+  margin:15px 0;
+  font-weight:bold;
+}
+
+.cta {
+  background:#FFD400;
+  color:black;
+  padding:18px 35px;
+  font-size:18px;
+  font-weight:bold;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+.section {
+  padding:40px 20px;
+  background:#1a1a1a;
+}
+
+.card {
+  background:#111;
+  padding:20px;
+  border-radius:10px;
+  margin:10px;
+}
+
+.testimonial {
+  font-style:italic;
+  margin:10px 0;
+}
+
+.fixed-cta {
+  position:fixed;
+  bottom:0;
+  width:100%;
+  background:#FFD400;
+  text-align:center;
+  padding:15px;
+  font-weight:bold;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="urgency">
+⚠️ PROMOÇÃO ENCERRA HOJE
+</div>
+
+<div class="hero">
+  <img src="logo.png" class="logo">
+
+  <h1>
+    Cansado de não ver resultado?<br>
+    <span class="highlight">Comece hoje na Mafra Academia</span>
+  </h1>
+
+  <p>Treinos completos + ambiente motivador</p>
+
+  <div class="price">
+    A partir de R$ 89,90/mês
+  </div>
+
+  <button class="cta" id="cta">Quero mudar meu corpo</button>
+</div>
+
+<div class="section">
+  <h2>O que você vai encontrar</h2>
+
+  <div class="card">🏋️ Equipamentos modernos</div>
+  <div class="card">💪 Treinos para todos níveis</div>
+  <div class="card">🔥 Resultados reais</div>
+  <div class="card">📍 Fácil acesso</div>
+</div>
+
+<div class="section">
+  <h2>Resultados reais</h2>
+
+  <div class="testimonial">"Em 2 meses já vi diferença no meu corpo!"</div>
+  <div class="testimonial">"Melhor academia que já treinei"</div>
+</div>
+
+<div class="fixed-cta" id="fixedCta">
+👉 FALAR NO WHATSAPP AGORA
+</div>
+
+<script>
+
+// CTA inteligente
+const cta = document.getElementById("cta");
+const fixed = document.getElementById("fixedCta");
+
+function redirect() {
+  window.location.href =
+  "https://wa.me/5548996389625?text=Quero%20me%20matricular%20na%20Mafra";
+}
+
+cta.onclick = redirect;
+fixed.onclick = redirect;
+
+// urgência fake dinâmica
+setInterval(() => {
+  document.querySelector(".urgency").innerText =
+  "⚠️ RESTAM POUCAS VAGAS HOJE";
+}, 8000);
+
+</script>
+
+</body>
+</html>
