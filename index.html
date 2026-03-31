@@ -1,804 +1,100 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mafra Academia - Treinos completos, equipamentos modernos e ambiente motivador em Palhoça/SC.">
-    <meta name="keywords" content="academia, fitness, musculação, palhoça, sc, saúde, bem-estar">
-    <meta name="author" content="Mafra Academia">
-    
-    <!-- Open Graph para redes sociais -->
-    <meta property="og:title" content="Mafra Academia - Transforme Seu Corpo">
-    <meta property="og:description" content="Treinos completos + ambiente motivador. A partir de R$ 89,90/mês">
-    <meta property="og:image" content="https://via.placeholder.com/1200x630/0B0B0B/FFD400?text=Mafra+Academia">
-    <meta property="og:type" content="website">
-    
-    <title>Mafra Academia | Palhoça - SC</title>
-    
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Configuração Tailwind -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'gold': '#FFD400',
-                        'dark': '#0B0B0B',
-                        'dark-light': '#1a1a1a',
-                        'dark-card': '#111111'
-                    },
-                    fontFamily: {
-                        'sans': ['Arial', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <!-- Ícones -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        /* Animações customizadas */
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-        
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .animate-pulse-custom {
-            animation: pulse 2s infinite;
-        }
-        
-        .animate-bounce-custom {
-            animation: bounce 2s infinite;
-        }
-        
-        .animate-slide-up {
-            animation: slideUp 0.6s ease-out forwards;
-        }
-        
-        .fade-in-section {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        
-        .fade-in-section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .gradient-gold {
-            background: linear-gradient(135deg, #FFD400 0%, #FFC107 100%);
-        }
-        
-        .gradient-dark {
-            background: linear-gradient(135deg, #0B0B0B 0%, #1a1a1a 100%);
-        }
-        
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(255, 212, 0, 0.1);
-        }
-        
-        .whatsapp-float {
-            position: fixed;
-            bottom: 100px;
-            right: 20px;
-            z-index: 1000;
-            animation: bounce 2s infinite;
-        }
-        
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-        }
-        
-        /* Smooth scroll */
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        /* Mobile adjustments */
-        @media (max-width: 768px) {
-            h1 { font-size: 24px !important; }
-            .hero { padding: 50px 20px !important; }
-            .section { padding: 30px 15px !important; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mafra Academia</title>
+
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Ícones -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+body {
+    background:#0B0B0B;
+    color:white;
+}
+
+/* efeito leve */
+.hover-scale:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+</style>
+
 </head>
 
-<body class="bg-dark text-white font-sans">
-    
-    <!-- Barra de Urgência -->
-    <div id="urgencyBar" class="bg-gold text-dark text-center py-3 px-4 font-bold text-sm md:text-base animate-pulse-custom">
-        ⚠️ PROMOÇÃO ENCERRA HOJE - RESTAM POUCAS VAGAS!
+<body>
+
+<!-- TOPO -->
+<div class="bg-yellow-400 text-black text-center py-2 font-bold">
+🔥 PROMOÇÃO POR TEMPO LIMITADO
+</div>
+
+<!-- HERO -->
+<section class="text-center py-16 px-4">
+
+    <!-- LOGO -->
+    <img src="logo.png" class="mx-auto w-32 mb-6" alt="Mafra Academia">
+
+    <h1 class="text-3xl md:text-5xl font-bold mb-4">
+        Comece a ver <span class="text-yellow-400">RESULTADO DE VERDADE</span>
+    </h1>
+
+    <p class="text-gray-400 mb-6">
+        Treinos completos + ambiente profissional
+    </p>
+
+    <div class="text-3xl text-yellow-400 font-bold mb-6">
+        R$ 89,90 / mês
     </div>
-    
-    <!-- Header / Navbar -->
-    <header class="fixed top-0 left-0 right-0 bg-dark-light/95 backdrop-blur-sm z-50 shadow-lg">
-        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <i class="fas fa-dumbbell text-gold text-2xl"></i>
-                <span class="text-xl font-bold">Mafra<span class="text-gold">Academia</span></span>
-            </div>
-            <div class="hidden md:flex space-x-6">
-                <a href="#home" class="hover:text-gold transition">Início</a>
-                <a href="#servicos" class="hover:text-gold transition">Serviços</a>
-                <a href="#planos" class="hover:text-gold transition">Planos</a>
-                <a href="#treinadores" class="hover:text-gold transition">Treinadores</a>
-                <a href="#depoimentos" class="hover:text-gold transition">Depoimentos</a>
-                <a href="#contato" class="hover:text-gold transition">Contato</a>
-            </div>
-            <a href="https://wa.me/5548996389625?text=Quero%20me%20matricular%20na%20Mafra" 
-                class="bg-gold text-dark px-4 py-2 rounded-lg font-bold hover:bg-yellow-400 transition hidden md:block">
-                <i class="fab fa-whatsapp mr-2"></i>Matricule-se
-            </a>
-            <!-- Menu Mobile -->
-            <button id="mobileMenuBtn" class="md:hidden text-gold text-2xl">
-                <i class="fas fa-bars"></i>
-            </button>
-        </nav>
-        <!-- Menu Mobile Dropdown -->
-        <div id="mobileMenu" class="hidden md:hidden bg-dark-light border-t border-gray-800">
-            <div class="flex flex-col p-4 space-y-3">
-                <a href="#home" class="hover:text-gold transition">Início</a>
-                <a href="#servicos" class="hover:text-gold transition">Serviços</a>
-                <a href="#planos" class="hover:text-gold transition">Planos</a>
-                <a href="#treinadores" class="hover:text-gold transition">Treinadores</a>
-                <a href="#depoimentos" class="hover:text-gold transition">Depoimentos</a>
-                <a href="#contato" class="hover:text-gold transition">Contato</a>
-                <a href="https://wa.me/5548996389625?text=Quero%20me%20matricular%20na%20Mafra" 
-                   class="bg-gold text-dark px-4 py-2 rounded-lg font-bold text-center">
-                    <i class="fab fa-whatsapp mr-2"></i>Matricule-se
-                </a>
-            </div>
-        </div>
-    </header>
-    
-    <!-- Hero Section -->
-    <section id="home" class="hero pt-32 pb-20 px-4 gradient-dark relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10">
-            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920')] bg-cover bg-center"></div>
-        </div>
-        
-        <div class="container mx-auto text-center relative z-10 animate-slide-up">
-            <div class="mb-6">
-                <i class="fas fa-dumbbell text-gold text-6xl"></i>
-            </div>
-            
-            <h1 class="text-3xl md:text-5xl font-bold mb-4 leading-tight">
-                Cansado de não ver resultado?<br>
-                <span class="text-gold">Comece hoje na Mafra Academia</span>
-            </h1>
-            
-            <p class="text-lg md:text-xl text-gray-300 mb-6">Treinos completos + ambiente motivador em Palhoça/SC</p>
-            
-            <div class="bg-dark-light/80 backdrop-blur-sm rounded-xl p-6 inline-block mb-8">
-                <p class="text-gray-400 text-sm mb-2">OFERTA ESPECIAL</p>
-                <p class="text-3xl md:text-4xl font-bold text-gold">R$ 89,90<span class="text-lg">/mês</span></p>
-                <p class="text-gray-400 text-sm mt-2">A partir de</p>
-            </div>
-            
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <button class="cta-btn bg-gold text-dark px-8 py-4 text-lg font-bold rounded-lg hover:bg-yellow-400 transition transform hover:scale-105 animate-pulse-custom">
-                    <i class="fas fa-fire mr-2"></i>Quero mudar meu corpo
-                </button>
-                <a href="#planos" class="border-2 border-gold text-gold px-8 py-4 text-lg font-bold rounded-lg hover:bg-gold hover:text-dark transition">
-                    Ver todos os planos
-                </a>
-            </div>
-            
-            <!-- Estatísticas -->
-            <div class="grid grid-cols-3 gap-4 mt-12 max-w-2xl mx-auto">
-                <div class="text-center">
-                    <div class="text-2xl md:text-3xl font-bold text-gold counter" data-target="500">0</div>
-                    <div class="text-sm text-gray-400">Membros</div>
-                </div>
-                <div class="text-center">
-                    <div class="text-2xl md:text-3xl font-bold text-gold counter" data-target="15">0</div>
-                    <div class="text-sm text-gray-400">Treinadores</div>
-                </div>
-                <div class="text-center">
-                    <div class="text-2xl md:text-3xl font-bold text-gold counter" data-target="100">0</div>
-                    <div class="text-sm text-gray-400">% Resultados</div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Sobre / Diferenciais -->
-    <section class="section py-16 px-4 bg-dark-light">
-        <div class="container mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
-                Por que escolher a <span class="text-gold">Mafra Academia</span>?
-            </h2>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-dark-card p-6 rounded-xl text-center card-hover transition duration-300">
-                    <div class="bg-gold/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-dumbbell text-gold text-2xl"></i>
-                    </div>
-                    <h3 class="font-bold text-xl mb-2">Equipamentos Modernos</h3>
-                    <p class="text-gray-400">Máquinas de última geração para seus treinos</p>
-                </div>
-                
-                <div class="bg-dark-card p-6 rounded-xl text-center card-hover transition duration-300">
-                    <div class="bg-gold/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-users text-gold text-2xl"></i>
-                    </div>
-                    <h3 class="font-bold text-xl mb-2">Treinos Personalizados</h3>
-                    <p class="text-gray-400">Para todos os níveis de condicionamento</p>
-                </div>
-                
-                <div class="bg-dark-card p-6 rounded-xl text-center card-hover transition duration-300">
-                    <div class="bg-gold/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-chart-line text-gold text-2xl"></i>
-                    </div>
-                    <h3 class="font-bold text-xl mb-2">Resultados Reais</h3>
-                    <p class="text-gray-400">Alunos transformados com nossos métodos</p>
-                </div>
-                
-                <div class="bg-dark-card p-6 rounded-xl text-center card-hover transition duration-300">
-                    <div class="bg-gold/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-map-marker-alt text-gold text-2xl"></i>
-                    </div>
-                    <h3 class="font-bold text-xl mb-2">Fácil Acesso</h3>
-                    <p class="text-gray-400">Localização privilegiada em Palhoça</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Serviços -->
-    <section id="servicos" class="section py-16 px-4 bg-dark">
-        <div class="container mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">
-                Nossas <span class="text-gold">Modalidades</span>
-            </h2>
-            <p class="text-gray-400 text-center mb-12 text-lg">Treinos variados para todos os objetivos</p>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-dark-card p-6 rounded-xl text-center card-hover transition duration-300">
-                    <i class="fas fa-dumbbell text-gold text-4xl mb-4"></i>
-                    <h3 class="font-bold text-lg mb-2">Musculação</h3>
-                    <p class="text-gray-400 text-sm">Equipamentos completos para hipertrofia</p>
-                </div>
-                
-                <div class="bg-dark-card p-6 rounded-xl text-center card-hover transition duration-300">
-                    <i class="fas fa-running text-gold text-4xl mb-4"></i>
-                    <h3 class="font-bold text-lg mb-2">Cardio</h3>
-                    <p class="text-gray-400 text-sm">Esteiras, bikes e elípticos modernos</p>
-                </div>
-                
-                <div class="bg-dark-card p-6 rounded-xl text-center card-hover transition duration-300">
-                    <i class="fas fa-fist-raised text-gold text-4xl mb-4"></i>
-                    <h3 class="font-bold text-lg mb-2">Boxe</h3>
-                    <p class="text-gray-400 text-sm">Treino completo de defesa e condicionamento</p>
-                </div>
-                
-                <div class="bg-dark-card p-6 rounded-xl text-center card-hover transition duration-300">
-                    <i class="fas fa-heartbeat text-gold text-4xl mb-4"></i>
-                    <h3 class="font-bold text-lg mb-2">Crossfit</h3>
-                    <p class="text-gray-400 text-sm">Funcional de alta intensidade</p>
-                </div>
-                
-                <div class="bg-dark-card p-6 rounded-xl text-center card-hover transition duration-300">
-                    <i class="fas fa-child text-gold text-4xl mb-4"></i>
-                    <h3 class="font-bold text-lg mb-2">Yoga</h3>
-                    <p class="text-gray-400 text-sm">Flexibilidade e bem-estar mental</p>
-                </div>
-                
-                <div class="bg-dark-card p-6 rounded-xl text-center card-hover transition duration-300">
-                    <i class="fas fa-spa text-gold text-4xl mb-4"></i>
-                    <h3 class="font-bold text-lg mb-2">Pilates</h3>
-                    <p class="text-gray-400 text-sm">Fortalecimento e postura</p>
-                </div>
-                
-                <div class="bg-dark-card p-6 rounded-xl text-center card-hover transition duration-300">
-                    <i class="fas fa-users text-gold text-4xl mb-4"></i>
-                    <h3 class="font-bold text-lg mb-2">Aulas Coletivas</h3>
-                    <p class="text-gray-400 text-sm">Dança, zumba e muito mais</p>
-                </div>
-                
-                <div class="bg-dark-card p-6 rounded-xl text-center card-hover transition duration-300">
-                    <i class="fas fa-user-friends text-gold text-4xl mb-4"></i>
-                    <h3 class="font-bold text-lg mb-2">Personal Trainer</h3>
-                    <p class="text-gray-400 text-sm">Acompanhamento individualizado</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Planos -->
-    <section id="planos" class="section py-16 px-4 bg-dark-light">
-        <div class="container mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">
-                Escolha seu <span class="text-gold">Plano</span>
-            </h2>
-            <p class="text-gray-400 text-center mb-12 text-lg">Investimento que vale a pena</p>
-            
-            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <!-- Plano Básico -->
-                <div class="bg-dark-card p-8 rounded-2xl text-center card-hover transition duration-300 border border-gray-800">
-                    <h3 class="text-2xl font-bold mb-4">Básico</h3>
-                    <div class="text-4xl font-bold text-gold mb-2">R$ 89,90</div>
-                    <p class="text-gray-400 mb-6">/mês</p>
-                    <ul class="text-left space-y-3 mb-8">
-                        <li><i class="fas fa-check text-gold mr-2"></i>Acesso à musculação</li>
-                        <li><i class="fas fa-check text-gold mr-2"></i>Horário livre</li>
-                        <li><i class="fas fa-check text-gold mr-2"></i>Camiseta exclusiva</li>
-                        <li class="text-gray-600"><i class="fas fa-times mr-2"></i>Aulas coletivas</li>
-                        <li class="text-gray-600"><i class="fas fa-times mr-2"></i>Acesso 24h</li>
-                    </ul>
-                    <a href="https://wa.me/5548996389625?text=Quero%20o%20plano%20Básico%20da%20Mafra" 
-                       class="block w-full border-2 border-gold text-gold px-6 py-3 rounded-lg font-bold hover:bg-gold hover:text-dark transition">
-                        Escolher Plano
-                    </a>
-                </div>
-                
-                <!-- Plano Pro (Destaque) -->
-                <div class="bg-gradient-to-b from-gold to-yellow-600 p-8 rounded-2xl text-center transform scale-105 shadow-2xl relative">
-                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-dark text-gold px-4 py-1 rounded-full text-sm font-bold">
-                        MAIS VENDIDO
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 text-dark">Pro</h3>
-                    <div class="text-4xl font-bold text-dark mb-2">R$ 119,90</div>
-                    <p class="text-dark/70 mb-6">/mês</p>
-                    <ul class="text-left space-y-3 mb-8">
-                        <li><i class="fas fa-check text-dark mr-2"></i>Acesso à musculação</li>
-                        <li><i class="fas fa-check text-dark mr-2"></i>Horário livre</li>
-                        <li><i class="fas fa-check text-dark mr-2"></i>Camiseta exclusiva</li>
-                        <li><i class="fas fa-check text-dark mr-2"></i>Aulas coletivas</li>
-                        <li><i class="fas fa-check text-dark mr-2"></i>Avaliação física gratuita</li>
-                    </ul>
-                    <a href="https://wa.me/5548996389625?text=Quero%20o%20plano%20Pro%20da%20Mafra" 
-                       class="block w-full bg-dark text-gold px-6 py-3 rounded-lg font-bold hover:bg-dark/90 transition">
-                        Escolher Plano
-                    </a>
-                </div>
-                
-                <!-- Plano Premium -->
-                <div class="bg-dark-card p-8 rounded-2xl text-center card-hover transition duration-300 border border-gray-800">
-                    <h3 class="text-2xl font-bold mb-4">Premium</h3>
-                    <div class="text-4xl font-bold text-gold mb-2">R$ 159,90</div>
-                    <p class="text-gray-400 mb-6">/mês</p>
-                    <ul class="text-left space-y-3 mb-8">
-                        <li><i class="fas fa-check text-gold mr-2"></i>Tudo do plano Pro</li>
-                        <li><i class="fas fa-check text-gold mr-2"></i>Acesso 24h</li>
-                        <li><i class="fas fa-check text-gold mr-2"></i>Personal Trainer (2x/mês)</li>
-                        <li><i class="fas fa-check text-gold mr-2"></i>Levantamento de peso</li>
-                        <li><i class="fas fa-check text-gold mr-2"></i>Área VIP</li>
-                    </ul>
-                    <a href="https://wa.me/5548996389625?text=Quero%20o%20plano%20Premium%20da%20Mafra" 
-                       class="block w-full border-2 border-gold text-gold px-6 py-3 rounded-lg font-bold hover:bg-gold hover:text-dark transition">
-                        Escolher Plano
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Treinadores -->
-    <section id="treinadores" class="section py-16 px-4 bg-dark">
-        <div class="container mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">
-                Nossos <span class="text-gold">Treinadores</span>
-            </h2>
-            <p class="text-gray-400 text-center mb-12 text-lg">Equipe qualificada para te guiar</p>
-            
-            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                <div class="bg-dark-card rounded-xl overflow-hidden card-hover transition duration-300">
-                    <div class="bg-gold/20 h-48 flex items-center justify-center">
-                        <i class="fas fa-user text-gold text-6xl"></i>
-                    </div>
-                    <div class="p-6 text-center">
-                        <h3 class="font-bold text-xl mb-2">Carlos Silva</h3>
-                        <p class="text-gold mb-3">Especialista em Hipertrofia</p>
-                        <p class="text-gray-400 text-sm">10 anos de experiência, formado em Educação Física pela UFSC.</p>
-                    </div>
-                </div>
-                
-                <div class="bg-dark-card rounded-xl overflow-hidden card-hover transition duration-300">
-                    <div class="bg-gold/20 h-48 flex items-center justify-center">
-                        <i class="fas fa-user text-gold text-6xl"></i>
-                    </div>
-                    <div class="p-6 text-center">
-                        <h3 class="font-bold text-xl mb-2">Ana Paula Costa</h3>
-                        <p class="text-gold mb-3">Especialista em Funcional</p>
-                        <p class="text-gray-400 text-sm">Especialista em Crossfit e treinamento funcional, 8 anos de experiência.</p>
-                    </div>
-                </div>
-                
-                <div class="bg-dark-card rounded-xl overflow-hidden card-hover transition duration-300">
-                    <div class="bg-gold/20 h-48 flex items-center justify-center">
-                        <i class="fas fa-user text-gold text-6xl"></i>
-                    </div>
-                    <div class="p-6 text-center">
-                        <h3 class="font-bold text-xl mb-2">Roberto Mendes</h3>
-                        <p class="text-gold mb-3">Especialista em Yoga</p>
-                        <p class="text-gray-400 text-sm">Mestre em Yoga e Pilates, foco em flexibilidade e bem-estar mental.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Depoimentos -->
-    <section id="depoimentos" class="section py-16 px-4 bg-dark-light">
-        <div class="container mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">
-                O que dizem nossos <span class="text-gold">Alunos</span>
-            </h2>
-            <p class="text-gray-400 text-center mb-12 text-lg">Histórias reais de transformação</p>
-            
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="bg-dark-card p-6 rounded-xl card-hover transition duration-300">
-                    <div class="flex text-gold mb-4">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="italic text-gray-300 mb-4">"Em 2 meses já vi diferença no meu corpo! Os treinadores são excelentes e me motivam todos os dias."</p>
-                    <div class="flex items-center">
-                        <div class="bg-gold/20 w-10 h-10 rounded-full flex items-center justify-center mr-3">
-                            <i class="fas fa-user text-gold"></i>
-                        </div>
-                        <div>
-                            <p class="font-bold">Marcos Oliveira</p>
-                            <p class="text-gray-400 text-sm">Aluno há 6 meses</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-dark-card p-6 rounded-xl card-hover transition duration-300">
-                    <div class="flex text-gold mb-4">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="italic text-gray-300 mb-4">"Melhor academia que já treinei! Equipamentos novos, ambiente limpo e equipe muito atenciosa."</p>
-                    <div class="flex items-center">
-                        <div class="bg-gold/20 w-10 h-10 rounded-full flex items-center justify-center mr-3">
-                            <i class="fas fa-user text-gold"></i>
-                        </div>
-                        <div>
-                            <p class="font-bold">Juliana Martins</p>
-                            <p class="text-gray-400 text-sm">Aluna há 1 ano</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-dark-card p-6 rounded-xl card-hover transition duration-300">
-                    <div class="flex text-gold mb-4">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="italic text-gray-300 mb-4">"Consegui perder 15kg em 4 meses! A Mafra mudou minha vida. Recomendo para todos!"</p>
-                    <div class="flex items-center">
-                        <div class="bg-gold/20 w-10 h-10 rounded-full flex items-center justify-center mr-3">
-                            <i class="fas fa-user text-gold"></i>
-                        </div>
-                        <div>
-                            <p class="font-bold">Pedro Henrique</p>
-                            <p class="text-gray-400 text-sm">Aluno há 8 meses</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Contato -->
-    <section id="contato" class="section py-16 px-4 bg-dark">
-        <div class="container mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">
-                Entre em <span class="text-gold">Contato</span>
-            </h2>
-            <p class="text-gray-400 text-center mb-12 text-lg">Estamos prontos para te atender</p>
-            
-            <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                <!-- Informações -->
-                <div class="space-y-6">
-                    <div class="bg-dark-card p-6 rounded-xl">
-                        <div class="flex items-start">
-                            <div class="bg-gold/20 w-12 h-12 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                                <i class="fas fa-map-marker-alt text-gold text-xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-lg mb-1">Endereço</h3>
-                                <p class="text-gray-400">Rua Nossa Senhora da Aparecida, 783</p>
-                                <p class="text-gray-400">Jardim Eldorado - Palhoça/SC</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-dark-card p-6 rounded-xl">
-                        <div class="flex items-start">
-                            <div class="bg-gold/20 w-12 h-12 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                                <i class="fab fa-whatsapp text-gold text-xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-lg mb-1">WhatsApp</h3>
-                                <p class="text-gray-400">(48) 99638-9625</p>
-                                <p class="text-gray-400 text-sm">Atendimento de Seg a Sex: 8h às 20h</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-dark-card p-6 rounded-xl">
-                        <div class="flex items-start">
-                            <div class="bg-gold/20 w-12 h-12 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                                <i class="fas fa-clock text-gold text-xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-lg mb-1">Horário de Funcionamento</h3>
-                                <p class="text-gray-400">Segunda a Sexta: 6h às 22h</p>
-                                <p class="text-gray-400">Sábado: 8h às 12h</p>
-                                <p class="text-gray-400">Domingo: Fechado</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Formulário -->
-                <div class="bg-dark-card p-8 rounded-xl">
-                    <h3 class="font-bold text-xl mb-6">Envie uma mensagem</h3>
-                    <form id="contactForm" class="space-y-4">
-                        <div>
-                            <label class="block text-sm mb-2">Nome</label>
-                            <input type="text" required class="w-full bg-dark-light border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-gold">
-                        </div>
-                        <div>
-                            <label class="block text-sm mb-2">WhatsApp</label>
-                            <input type="tel" required class="w-full bg-dark-light border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-gold">
-                        </div>
-                        <div>
-                            <label class="block text-sm mb-2">Email</label>
-                            <input type="email" required class="w-full bg-dark-light border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-gold">
-                        </div>
-                        <div>
-                            <label class="block text-sm mb-2">Mensagem</label>
-                            <textarea rows="4" required class="w-full bg-dark-light border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-gold"></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-gold text-dark px-6 py-3 rounded-lg font-bold hover:bg-yellow-400 transition">
-                            <i class="fab fa-whatsapp mr-2"></i>Enviar via WhatsApp
-                        </button>
-                    </form>
-                </div>
-            </div>
-            
-            <!-- Mapa -->
-            <div class="mt-12 max-w-6xl mx-auto">
-                <h3 class="font-bold text-xl mb-6 text-center">Localização</h3>
-                <div class="bg-dark-light rounded-xl overflow-hidden h-80">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3571.5!2d-48.666!3d-27.666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjfCsDM5JzU4LjQiUyA0OMKwMzknNTcuNiJX!5e0!3m2!1spt-BR!2sbr!4v1234567890" 
-                        width="100%" 
-                        height="100%" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Footer -->
-    <footer class="bg-dark-light py-12 px-4 border-t border-gray-800">
-        <div class="container mx-auto">
-            <div class="grid md:grid-cols-4 gap-8 mb-8">
-                <div>
-                    <div class="flex items-center space-x-2 mb-4">
-                        <i class="fas fa-dumbbell text-gold text-2xl"></i>
-                        <span class="text-xl font-bold">Mafra<span class="text-gold">Academia</span></span>
-                    </div>
-                    <p class="text-gray-400 text-sm">Transformando corpos e vidas desde 2010.</p>
-                </div>
-                
-                <div>
-                    <h4 class="font-bold mb-4">Links Rápidos</h4>
-                    <ul class="space-y-2 text-gray-400 text-sm">
-                        <li><a href="#home" class="hover:text-gold transition">Início</a></li>
-                        <li><a href="#servicos" class="hover:text-gold transition">Serviços</a></li>
-                        <li><a href="#planos" class="hover:text-gold transition">Planos</a></li>
-                        <li><a href="#contato" class="hover:text-gold transition">Contato</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="font-bold mb-4">Redes Sociais</h4>
-                    <div class="flex space-x-4">
-                        <a href="#" class="bg-dark-card w-10 h-10 rounded-full flex items-center justify-center hover:bg-gold hover:text-dark transition">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="bg-dark-card w-10 h-10 rounded-full flex items-center justify-center hover:bg-gold hover:text-dark transition">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                        <a href="#" class="bg-dark-card w-10 h-10 rounded-full flex items-center justify-center hover:bg-gold hover:text-dark transition">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div>
-                    <h4 class="font-bold mb-4">Contato</h4>
-                    <p class="text-gray-400 text-sm mb-2">(48) 99638-9625</p>
-                    <p class="text-gray-400 text-sm">contato@mafraacademia.com.br</p>
-                    <p class="text-gray-400 text-sm mt-2">Seg-Sex: 6h-22h | Sáb: 8h-12h</p>
-                </div>
-            </div>
-            
-            <div class="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
-                <p>&copy; 2026 Mafra Academia. Todos os direitos reservados.</p>
-            </div>
-        </div>
-    </footer>
-    
-    <!-- WhatsApp Flutuante -->
-    <a href="https://wa.me/5548996389625?text=Olá!%20Quero%20mais%20informações%20sobre%20a%20Mafra%20Academia" 
-       class="whatsapp-float bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition"
-       target="_blank"
-       rel="noopener noreferrer">
-            <i class="fab fa-whatsapp text-3xl"></i>
-        </a>
-    
-    <!-- CTA Fixo Mobile -->
-    <div class="fixed bottom-0 left-0 right-0 bg-gold text-dark text-center py-4 font-bold md:hidden z-50">
-        <a href="https://wa.me/5548996389625?text=Quero%20me%20matricular%20na%20Mafra" class="flex items-center justify-center">
-            <i class="fab fa-whatsapp mr-2 text-xl"></i>
-            FALAR NO WHATSAPP AGORA
-        </a>
-    </div>
-    
-    <!-- JavaScript -->
-    <script>
-        // Menu Mobile
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-        
-        // Fechar menu ao clicar em link
-        document.querySelectorAll('#mobileMenu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-        
-        // Barra de Urgência Dinâmica
-        const urgencyMessages = [
-            "⚠️ PROMOÇÃO ENCERRA HOJE - RESTAM POUCAS VAGAS!",
-            "🔥 ÚLTIMAS 5 VAGAS COM DESCONTO ESPECIAL!",
-            "⏰ OFERTA TERMINA À MEIA-NOITE - GARANTA AGORA!",
-            "🎯 MATRICULE-SE HOJE E GANHE 1 MÊS GRÁTIS!"
-        ];
-        
-        let urgencyIndex = 0;
-        setInterval(() => {
-            urgencyIndex = (urgencyIndex + 1) % urgencyMessages.length;
-            document.getElementById('urgencyBar').innerText = urgencyMessages[urgencyIndex];
-        }, 8000);
-        
-        // Contadores Animados
-        const counters = document.querySelectorAll('.counter');
-        const speed = 200;
-        
-        const animateCounters = () => {
-            counters.forEach(counter => {
-                const target = +counter.getAttribute('data-target');
-                const count = +counter.innerText;
-                const increment = target / speed;
-                
-                if (count < target) {
-                    counter.innerText = Math.ceil(count + increment);
-                    setTimeout(animateCounters, 10);
-                } else {
-                    counter.innerText = target + (target === 100 ? '%' : '+');
-                }
-            });
-        };
-        
-        // Animar contadores quando a seção estiver visível
-        let countersAnimated = false;
-        const homeSection = document.getElementById('home');
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !countersAnimated) {
-                    animateCounters();
-                    countersAnimated = true;
-                }
-            });
-        }, { threshold: 0.5 });
-        
-        observer.observe(homeSection);
-        
-        // Fade-in ao rolar
-        const fadeElements = document.querySelectorAll('.section, .card-hover');
-        
-        const fadeObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-        
-        fadeElements.forEach(el => {
-            el.classList.add('fade-in-section');
-            fadeObserver.observe(el);
-        });
-        
-        // Formulário de Contato
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formData = new FormData(this);
-            const name = this.querySelector('input[type="text"]').value;
-            const whatsapp = this.querySelector('input[type="tel"]').value;
-            const email = this.querySelector('input[type="email"]').value;
-            const message = this.querySelector('textarea').value;
-            
-            const whatsappMessage = `Olá! Meu nome é ${name}.%0AWhatsApp: ${whatsapp}%0AEmail: ${email}%0AMensagem: ${message}`;
-            
-            window.open(`https://wa.me/5548996389625?text=${whatsappMessage}`, '_blank');
-        });
-        
-        // Smooth Scroll para links internos
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-        
-        // Header background on scroll
-        const header = document.querySelector('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                header.classList.add('shadow-lg');
-            } else {
-                header.classList.remove('shadow-lg');
-            }
-        });
-        
-        // CTA Buttons
-        document.querySelectorAll('.cta-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                window.open('https://wa.me/5548996389625?text=Quero%20me%20matricular%20na%20Mafra', '_blank');
-            });
-        });
-        
-        console.log('🎉 Mafra Academia - Site carregado com sucesso!');
-    </script>
+
+    <button onclick="whatsapp()" 
+    class="bg-yellow-400 text-black px-8 py-4 rounded-lg font-bold hover-scale">
+        QUERO COMEÇAR AGORA
+    </button>
+
+</section>
+
+<!-- BENEFÍCIOS -->
+<section class="py-12 px-4 text-center">
+
+<h2 class="text-2xl font-bold mb-8 text-yellow-400">
+Por que escolher a Mafra?
+</h2>
+
+<div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+
+<div class="bg-gray-900 p-6 rounded-lg">
+🏋️ Equipamentos modernos
+</div>
+
+<div class="bg-gray-900 p-6 rounded-lg">
+💪 Treinos para todos níveis
+</div>
+
+<div class="bg-gray-900 p-6 rounded-lg">
+🔥 Resultados reais
+</div>
+
+</div>
+
+</section>
+
+<!-- WHATSAPP FIXO -->
+<div onclick="whatsapp()" 
+class="fixed bottom-5 right-5 bg-yellow-400 text-black px-5 py-3 rounded-full font-bold cursor-pointer">
+💬 WhatsApp
+</div>
+
+<script>
+function whatsapp(){
+    window.open("https://wa.me/5548996389625?text=Quero%20me%20matricular","_blank");
+}
+</script>
+
 </body>
 </html>
